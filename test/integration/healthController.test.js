@@ -12,7 +12,6 @@ describe('healthController', function () {
       .get('/healthcheck')
       .end((err, res) => {
         if (err) { return done() }
-
         expect(res).to.have.status(400)
         expect(res.body).to.be.an('object')
         expect(res.body).to.have.property('uptime').that.is.a('number')
